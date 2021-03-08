@@ -27,7 +27,7 @@ li {
 }
 
 a:link , a:visited { text-decoration: none; }
-a:hover, a:active { text-decoration: underline; }
+a:hover, a:active { text-decoration: none; }
 
 a img, form, fieldset{
 	background: none;

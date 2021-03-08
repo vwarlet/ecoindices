@@ -124,9 +124,7 @@ function editar(){
         if(rows[row].id == id){
           var t = document.getElementById('titulo');
           t.setAttribute("value", rows[row].titulo);
-          var p = document.getElementById('postagem');
-          p.value = rows[row].postagem;
-          // saving and getting data ckeditor
+          window.editor.setData(rows[row].postagem);
         }
       }
 		
