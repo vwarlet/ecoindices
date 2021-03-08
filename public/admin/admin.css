@@ -1,0 +1,97 @@
+
+body{
+    background-color: #ddd;
+    
+}
+
+h1{
+    color:#af0000;
+}
+
+.login_form{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    margin-top: -50px;
+    width: 100px;
+    height: 100px;
+    
+}
+
+.noticias{
+    margin: 30px 30%;
+}
+
+.posts{
+    margin: 50px 20%;
+    width: 40%;
+}
+
+a{
+    padding-right: 10px;
+}
+
+strong{
+    color: black;
+}
+
+p{
+    color: #555;
+}
+
+em{
+	color: #af0000;
+	font-style: normal;
+	font-weight: bold;
+	padding-right: 10px;
+}
+
+
+.ck-editor__editable {
+    min-height: 400px;
+    resize: both;
+}
+
+.label_post{
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+.button{
+    margin-left: 40%;
+    width: 100px;
+    height: 30px;
+}
+
+#paginacao{
+	margin-top: 10px;
+	margin-left: 35%;
+}
+
+.btn {
+    background-color:  #ddd; /* Blue background */
+    border: none; /* Remove borders */
+    color: #af0000; /* White text */
+    padding: 8px 10px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+  
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: #af0000;
+    color: white;
+}
+
+i{
+    color:#af0000;
+}
+
+form{
+    display: inline-block;
+}
+
+#numeracao{
+    color:#af0000;
+}

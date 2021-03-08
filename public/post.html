@@ -1,0 +1,78 @@
+<style>
+  #titulo {
+    border: 1px solid;
+    margin: 10px;
+  }
+
+  .ck-editor__editable {
+    min-height: 400px;
+  }
+</style>
+
+<div id="welcome" style="text-align: center">
+  <h1>NOVA POSTAGEM</h1>
+  <br />
+  <form method="post" action="/add">
+    <label for="titulo"><strong>Título</strong></label
+    ><br />
+    <input type="text" id="titulo" name="titulo" size="50" /><br /><br />
+    <label for="postagem"><strong>Postagem</strong></label
+    ><br />
+    <textarea id="postagem" name="postagem" rows="10" cols="51"></textarea>
+    <br />
+    <input class="button" type="submit" value="Postar" />
+    <br /><br />
+  </form>
+  <br /><br />
+</div>
+
+
+<form action="/view" method="POST">
+  <fieldset>
+      <h3>View an employee</h3>
+      <label>Employee ID</label>
+      <input type="text" id="empID" name="id" placeholder="1,2,3..." required>
+      <br><br>
+      <button type ="reset">Reset</button>
+      <button type ="submit">Submit</button>
+      <br><br><br>
+  </fieldset>
+</form>
+<form action="/update" method="POST">
+    <fieldset>
+            <h3>Update an employee</h3>
+            <label>Employee ID</label>
+            <input type ="text" id = 'empID' name="id" placeholder="1,2,3..." required>
+            <br><br>
+
+            <label>New Name</label>
+            <input type="text" id = "name" name="name" placeholder="Maverick" required>
+            <br><br>
+
+            <button type ="reset">Reset</button>
+            <button type ="submit">Submit</button>
+    </fieldset>
+</form>
+<form action="/delete" method="POST">
+    <fieldset>
+            <h3>Delete an employee</h3>
+            <label>Employee ID</label>
+            <input type ="text" id = 'empID' name="id" placeholder="1,2,3..." required>
+            <br><br>
+
+            <button type ="reset">Reset</button>
+            <button type ="submit">Submit</button>
+            <br><br><br>
+    </fieldset>
+</form>
+
+
+<script>
+  ClassicEditor.create(document.querySelector("#postagem"))
+    .then((editor) => {
+      //console.log(editor);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+</script>

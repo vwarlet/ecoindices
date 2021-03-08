@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" media="screen" type="text/css" href="style.css"  />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script>
+    
+    <title>Site Contabilidade</title>
+</head>
+<body>  
+  <div id="data"></div>
+  <div id="body">
+    <div id="holder">	
+      <div id="header">
+        <div id="img">
+          <p> <b>Empresa de </b> <br />
+            Negócios Contábeis <br />
+            <span> Para otimizar seus negócios</span></p>
+          <p id="call"> Contatos : 0800 000 000 - email@provedor.com</p>
+        </div>
+        <div id="logo"><a href="#"> Empresa<br />
+          <span id="slogan"> Slogan da Empresa</span></a> 
+        </div>
+      </div>
+      <div class="clear"></div>
+         
+      <ul id="menu">
+        <li id="menu_link_first" class="main"><a href="#">Principal</a></li>
+        <li class="menu_link sobre"><a href="#">Sobre</a></li>
+        <li class="menu_link news"><a href="#">Notícias</a></li>
+        <li class="menu_link indices"><a href="#">Índices</a></li>
+        <li class="menu_link debit"><a href="#">Índices Debit</a></li>       
+        <li class="menu_link admin"><a href="#">ADMIN</a></li>
+      </ul>
+      <div class="clear"></div>
+      
+      <div id="content">
+    
+            <div id="left">
+                <div id="infos">
+                    <form method="post" action="#">
+                      <fieldset>
+                        <input id="cep-input" type="text" value="" name="newsletter" size="25"/>
+                        <input id="cep-button" type="button" value="OK" name="button" class="button"/>
+                      </fieldset>
+                    </form>
+                    <div id="cep">Digite o CEP acima para pesquisar o endereço (Rua, Cidade - Estado)</div>
+                    <table>
+                      <tr>
+                        <td>Dólar</td>
+                        <td><div class="dolar taxa"></div></td>
+                      </tr>
+                      <tr>
+                        <td>Euro</td>
+                        <td><div class="euro taxa"></div></td>
+                      </tr>
+                      <tr>
+                        <td>Selic</td>
+                        <td><div class="selic taxa"></div></td>
+                      </tr>
+                    </table>
+                    
+                   
+    
+                </div>
+            </div>
+
+        <!-- Conteúdo de cada página -->
+        <div id="right">
+          <div id="page"></div>
+        </div>
+         
+         <div class="clear"></div>
+         <!-- CONTENT END -->
+         <!-- FOOTER -->
+         <div id="footer"> Todos os direitos reservados &copy; 2021 </div>
+         <!-- FOOTER END -->
+    </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    
+    <script> paginas(); </script>
+</body>
+</html>

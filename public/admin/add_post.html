@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" media="screen" type="text/css" href="admin.css"  />
+    
+    <title>Criar Postagem</title>
+</head>
+<body>  
+    <div class="posts">
+        <a href="manager.html"><input type="submit" value="LISTA DE POSTAGENS"/></a>
+        <h1>NOVA POSTAGEM</h1>
+        <br />
+        <form method="post" action="/add">
+          <label class="label_post" for="titulo"><strong>Título</strong></label><br />
+          <input type="text" id="titulo" name="titulo" size="50" /><br /><br />
+          <label class="label_post" for="postagem"><strong>Postagem</strong></label><br />
+          <textarea id="postagem" class="editor" name="postagem" rows="10" cols="51"></textarea>
+          <br />
+          <input class="button" type="submit" value="Postar" />
+          <br /><br />
+        </form>
+        <br /><br />
+    </div>
+
+
+    <script src="../ckeditor5/build/ckeditor.js"></script>
+    <script> ClassicEditor
+	.create( document.querySelector( '.editor' ), {
+				
+				toolbar: {
+					items: [
+						'heading',
+						'|',
+						'fontFamily',
+						'fontSize',
+						'fontColor',
+						'fontBackgroundColor',
+						'bold',
+						'italic',
+						'underline',
+						'bulletedList',
+						'numberedList',
+						'|',
+						'alignment',
+						'outdent',
+						'indent',
+						'|',
+						'removeFormat',
+						'link',
+						'imageUpload',
+						'imageInsert',
+						'mediaEmbed',
+						'insertTable',
+						'blockQuote',
+						'|',
+						'undo',
+						'redo',
+						'CKFinder'
+					]
+				},
+				language: 'pt-br',
+				image: {
+					toolbar: [
+						'imageTextAlternative',
+						'imageStyle:full',
+						'imageStyle:side',
+						'linkImage'
+					]
+				},
+				table: {
+					contentToolbar: [
+						'tableColumn',
+						'tableRow',
+						'mergeTableCells'
+					]
+				},
+				licenseKey: '',
+				
+			} )
+			.then( editor => {
+				window.editor = editor;
+
+				
+			} )
+			.catch( error => {
+				console.error( 'Oops, something went wrong!' );
+				console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+				console.warn( 'Build id: ha4d3w9aeki-gtphiss1xyre' );
+				console.error( error );
+			} );
+    </script>
+    
+</body>
+</html>
+
+
+
+
