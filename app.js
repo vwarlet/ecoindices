@@ -147,6 +147,6 @@ app.get('/close', function(req,res){
 
 
 
-server.listen(3000, function(){
-  console.log("server is listening on port: 3000");
+server.listen(process.env.PORT || 3000, function(){
+  console.log("server is listening...");
 });

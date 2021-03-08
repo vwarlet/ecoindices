@@ -148,3 +148,36 @@ function indices(){
     }       
 });
 }
+
+
+// Renderiza do JSON as Últimas Notícias
+function ultimas(){
+var url = window.location.host;
+$.getJSON("http://"+url+"/rows/", function(rows){
+  for(row = rows.length-1; row > rows.length-5; row--) {
+      var p = document.createElement('p');  
+      var em = document.createElement('em');
+      var strong = document.createElement('strong');
+      var a = document.createElement('a');
+
+      em.innerHTML = rows[row].data;
+      strong.innerHTML = rows[row].titulo;
+      a.innerHTML = rows[row].postagem;
+
+      p.classList.add('p');
+
+      p.appendChild(em);
+      p.appendChild(strong);
+      p.appendChild(document.createElement("br"));
+      p.appendChild(a);
+      p.appendChild(document.createElement("br"));
+
+      document.getElementById('ultimas').appendChild(p); 
+  }
+});
+
+
+$(".more_news").click(function(){
+  $("#page").load("news.html");
+});
+}
