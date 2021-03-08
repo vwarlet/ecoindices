@@ -1,7 +1,7 @@
 function news() {
   var url = window.location.host;
   // Lista todas as notícias
-  $.getJSON("http://"+url+"/rows/", function (rows) {
+  $.getJSON("https://"+url+"/rows/", function (rows) {
     var tamanhoPagina = 4;
     var pagina = 0;
 
@@ -119,7 +119,7 @@ function editar(){
     var id = window.location.search;
     id = id.substring(id.indexOf("?")+1);
     var url = window.location.host;
-    $.getJSON("http://"+url+"/rows/", function(rows){
+    $.getJSON("https://"+url+"/rows/", function(rows){
       for(row in rows){
         if(rows[row].id == id){
           var t = document.getElementById('titulo');

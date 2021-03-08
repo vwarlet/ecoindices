@@ -74,10 +74,43 @@ function paginas(){
 }
 
 
+// Renderiza do JSON as Últimas Notícias
+function ultimas(){
+  var url = window.location.host;
+  $.getJSON("https://"+url+"/rows/", function(rows){
+    for(row = rows.length-1; row > rows.length-5; row--) {
+        var p = document.createElement('p');  
+        var em = document.createElement('em');
+        var strong = document.createElement('strong');
+        var a = document.createElement('a');
+  
+        em.innerHTML = rows[row].data;
+        strong.innerHTML = rows[row].titulo;
+        a.innerHTML = rows[row].postagem;
+  
+        p.classList.add('p');
+  
+        p.appendChild(em);
+        p.appendChild(strong);
+        p.appendChild(document.createElement("br"));
+        p.appendChild(a);
+        p.appendChild(document.createElement("br"));
+  
+        document.getElementById('ultimas').appendChild(p); 
+    }
+  });
+  
+  
+  $(".more_news").click(function(){
+    $("#page").load("news.html");
+  });
+  }
+
+
 // Carregar a página de notícias
 function news(){
 var url = window.location.host;
-$.getJSON("http://"+url+"/rows/", function(rows){
+$.getJSON("https://"+url+"/rows/", function(rows){
 
   var tamanhoPagina = 5;
   var pagina = 0;
@@ -139,45 +172,12 @@ $.getJSON("http://"+url+"/rows/", function(rows){
 // Carregar a página de íncides econômicos
 function indices(){
   var url = window.location.host;
-  $.getJSON("http://"+url+"/indices/", function(rows){
+  $.getJSON("https://"+url+"/indices/", function(rows){
 
     for(row in rows){
         var p = document.createElement('p');  
         p.innerHTML = rows[row];
         document.getElementById('indices').appendChild(p); 
     }       
-});
-}
-
-
-// Renderiza do JSON as Últimas Notícias
-function ultimas(){
-var url = window.location.host;
-$.getJSON("http://"+url+"/rows/", function(rows){
-  for(row = rows.length-1; row > rows.length-5; row--) {
-      var p = document.createElement('p');  
-      var em = document.createElement('em');
-      var strong = document.createElement('strong');
-      var a = document.createElement('a');
-
-      em.innerHTML = rows[row].data;
-      strong.innerHTML = rows[row].titulo;
-      a.innerHTML = rows[row].postagem;
-
-      p.classList.add('p');
-
-      p.appendChild(em);
-      p.appendChild(strong);
-      p.appendChild(document.createElement("br"));
-      p.appendChild(a);
-      p.appendChild(document.createElement("br"));
-
-      document.getElementById('ultimas').appendChild(p); 
-  }
-});
-
-
-$(".more_news").click(function(){
-  $("#page").load("news.html");
 });
 }
