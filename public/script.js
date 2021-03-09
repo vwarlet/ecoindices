@@ -1,8 +1,8 @@
 /* HTTPS pro Heroku
  * HTTP pra localhost
  */
-//var protocolo = "http";
-var protocolo = "https"; 
+//var protocolo = "http://";
+var protocolo = "https://"; 
 
 // CEP
 $("#cep-button").click(function(){
