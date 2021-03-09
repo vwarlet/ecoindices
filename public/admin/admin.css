@@ -79,14 +79,9 @@ em{
   }
   
 
-/* Darker background on mouse-over */
-.btn:hover {
-    background-color: #af0000;
-    color: white;
-}
-
 i{
     color:#af0000;
+    cursor: pointer;
 }
 
 form{
@@ -96,3 +91,15 @@ form{
 #numeracao{
     color:#af0000;
 }
+
+
+.btn:hover
+{
+    background-color: #af0000;
+}
+
+.btn:hover > i {
+    background-color: #af0000;
+    color: white;
+}
+

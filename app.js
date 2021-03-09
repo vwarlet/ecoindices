@@ -53,9 +53,9 @@ app.post('/add', function(req,res){
 // Alterar Postagem
 app.post('/update', function(req,res){
   db.serialize(()=>{
-    db.run('UPDATE Posts SET titulo = ?, postagem = ?', [req.body.titulo, req.body.postagem], function(err){
+    db.run('UPDATE Posts SET titulo = ?, postagem = ? WHERE id = ?', [req.body.titulo, req.body.postagem, req.body.id], function(err){
       if(err){
-        res.send("Error encountered while updating");
+        res.send("Erro! Postagem não atualizada");
         return console.error(err.message);
       }
 
@@ -69,13 +69,12 @@ app.post('/delete', function(req,res){
   db.serialize(()=>{
     db.run('DELETE FROM Posts WHERE id = ?', req.body.id, function(err) {
       if (err) {
-        res.send("Error encountered while deleting");
+        res.send("Erro! Postagem não excluída");
         return console.error(err.message);
       }
       res.redirect('./admin/manager.html');
     });
   });
-
 });
 
 //Não estou usando, para ver 1 postagem buscando pelo ID

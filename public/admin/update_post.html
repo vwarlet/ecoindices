@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" media="screen" type="text/css" href="admin.css"  />
     
-    <title>Criar Postagem</title>
+    <title>Atualizar Postagem</title>
 </head>
 <body>  
     <div class="posts">
@@ -16,12 +16,14 @@
         <h1>NOVA POSTAGEM</h1>
         <br />
         <form method="post" action="/update">
+		  <input class="alterar" name="id"/>
           <label class="label_post" for="titulo"><strong>Título</strong></label><br />
-          <input type="text" id="titulo" name="titulo" size="50" value=""/><br /><br />
+          <input type="text" id="titulo" name="titulo" size="50"/><br /><br />
           <label class="label_post" for="postagem"><strong>Postagem</strong></label><br />
           <textarea id="postagem" class="editor" name="postagem"></textarea>
+		  
           <br />
-          <input class="button" type="submit" value="Editar" />
+          <input class="button" type="submit" value="Atualizar" onclick="editado()"/>
           <br /><br />
         </form>
         <br /><br />

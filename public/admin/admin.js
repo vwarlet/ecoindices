@@ -1,7 +1,13 @@
+/* HTTPS pro Heroku
+ * HTTP pra localhost
+ */
+//var protocolo = "http";
+var protocolo = "https"; 
+
 function news() {
   var url = window.location.host;
   // Lista todas as notícias
-  $.getJSON("https://"+url+"/rows/", function (rows) {
+  $.getJSON(protocolo+url+"/rows/", function (rows) {
     var tamanhoPagina = 4;
     var pagina = 0;
 
@@ -64,6 +70,7 @@ function news() {
 
       $("#numeracao").text("Página " + (pagina + 1) + " de " + Math.ceil(rows.length / tamanhoPagina));
 
+      // Confirmar exclusão
       $(".excluir").click(function () {
         console.log("clicou");
         var result = confirm(
@@ -119,14 +126,22 @@ function editar(){
     var id = window.location.search;
     id = id.substring(id.indexOf("?")+1);
     var url = window.location.host;
-    $.getJSON("https://"+url+"/rows/", function(rows){
+    $.getJSON(protocolo+url+"/rows/", function(rows){
       for(row in rows){
         if(rows[row].id == id){
+          var input = document.querySelector('.alterar');
+          input.setAttribute("value", id);
           var t = document.getElementById('titulo');
           t.setAttribute("value", rows[row].titulo);
+          //var p = document.getElementById('postagem');
+          //p.value = rows[row].postagem;
           window.editor.setData(rows[row].postagem);
         }
       }
-		
 	  });
+}
+
+
+function editado(){
+  //alert("Postagem Atualizada com Sucesso!");
 }
