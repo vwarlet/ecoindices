@@ -1,9 +1,3 @@
-/* HTTPS pro Heroku
- * HTTP pra localhost
- */
-//var protocolo = "http://";
-var protocolo = "https://"; 
-
 // CEP
 $("#cep-button").click(function(){
   var cep = $("#cep-input").val();
@@ -83,7 +77,7 @@ function paginas(){
 // Renderiza do JSON as Últimas Notícias
 function ultimas(){
   var url = window.location.host;
-  $.getJSON(protocolo+url+"/rows/", function(rows){
+  $.getJSON("https://+url+"/rows/", function(rows){
     for(row = rows.length-1; row > rows.length-5; row--) {
         var p = document.createElement('p');  
         var em = document.createElement('em');
@@ -116,7 +110,7 @@ function ultimas(){
 // Carregar a página de notícias
 function news(){
 var url = window.location.host;
-$.getJSON("protocolo"+url+"/rows/", function(rows){
+$.getJSON("https://"+url+"/rows/", function(rows){
 
   var tamanhoPagina = 5;
   var pagina = 0;
@@ -178,7 +172,7 @@ $.getJSON("protocolo"+url+"/rows/", function(rows){
 // Carregar a página de íncides econômicos
 function indices(){
   var url = window.location.host;
-  $.getJSON(protocolo+url+"/indices/", function(rows){
+  $.getJSON("https://"+url+"/indices/", function(rows){
 
     for(row in rows){
         var p = document.createElement('p');  
