@@ -77,7 +77,7 @@ function paginas(){
 // Renderiza do JSON as Últimas Notícias
 function ultimas(){
   var url = window.location.host;
-  $.getJSON("https://+url+"/rows/", function(rows){
+  $.getJSON("https://"+url+"/rows/", function(rows){
     for(row = rows.length-1; row > rows.length-5; row--) {
         var p = document.createElement('p');  
         var em = document.createElement('em');
