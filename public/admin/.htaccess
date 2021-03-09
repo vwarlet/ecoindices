@@ -1,0 +1,5 @@
+AuthUserFile /public/admin/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Restricted access"
+AuthType basic
+require valid-user

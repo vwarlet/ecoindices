@@ -59,7 +59,6 @@ function news() {
         p.appendChild(document.createElement("br"));
 
         document.getElementById("edit_noticias").appendChild(p);
-       
       }
 
       $("#numeracao").text("Página " + (pagina + 1) + " de " + Math.ceil(rows.length / tamanhoPagina));
@@ -137,5 +136,5 @@ function editar(){
 
 
 function editado(){
-  //alert("Postagem Atualizada com Sucesso!");
+  alert("Postagem Atualizada com Sucesso!");
 }

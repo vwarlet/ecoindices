@@ -66,11 +66,11 @@ function paginas(){
   $(".sobre").click(function(){
     $("#page").load("about.html");
   });
-  /*
+  
   $(".admin").click(function() {
     $("#page").load("/admin/manager.html");
   });
-  */
+  
 }
 
 
@@ -117,7 +117,8 @@ $.getJSON("https://"+url+"/rows/", function(rows){
 
   function paginar() {
       $('p').remove();
-      for (var i = pagina * tamanhoPagina; i < rows.length && i < (pagina + 1) *  tamanhoPagina; i++) {//for(row = rows.length-1; row >= 0; row--) {
+      var noticias = [];
+      for(var i = pagina * tamanhoPagina; i < rows.length && i < (pagina + 1) *  tamanhoPagina; i++)  {//for (var i = pagina * tamanhoPagina; i < rows.length && i < (pagina + 1) *  tamanhoPagina; i++) {
           var p = document.createElement('p');  
           var em = document.createElement('em');
           var strong = document.createElement('strong');
@@ -135,8 +136,13 @@ $.getJSON("https://"+url+"/rows/", function(rows){
           p.appendChild(a);
           p.appendChild(document.createElement("br"));
 
-          document.getElementById('noticias').appendChild(p); 
+          //document.getElementById('noticias').appendChild(p); 
+          noticias.push(p);
       }
+      // inverter pra mostrar as ultimas no inicio
+      for(i = noticias.length-1; i>=0; i--)
+        document.getElementById('noticias').appendChild(noticias[i]);
+
       $('#numeracao').text('Página ' + (pagina + 1) + ' de ' + Math.ceil(rows.length / tamanhoPagina));
   }
 
