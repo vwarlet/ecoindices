@@ -67,10 +67,6 @@ function paginas(){
     $("#page").load("about.html");
   });
   
-  $(".admin").click(function() {
-    $("#page").load("/admin/manager.html");
-  });
-  
 }
 
 
